@@ -18,6 +18,16 @@ public class HelloWorldController : Controller
         return View();
     }
 
+    public IActionResult Welcome(string nome, int ID=1)
+    {
+        ViewData["Mensagem"] = "Olá"+nome;
+        ViewData["ID"] =ID;
+
+        return View();
+    }
+
+    
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
